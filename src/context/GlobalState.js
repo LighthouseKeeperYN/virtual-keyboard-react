@@ -53,8 +53,9 @@ const GlobalState = (props) => {
 
   const addListItem = (item) => {
     if (item.length === 0) showAlert("Value shouldn't be empty");
-    else if (!item.match(/\w+/)) showAlert("Special character aren't allowed");
-    else {
+    else if (!item.match(/^[\p{Letter}\d]+$/u)) {
+      showAlert("Special character aren't allowed");
+    } else {
       dispatch({
         type: ADD_LIST_ITEM,
         payload: item,
