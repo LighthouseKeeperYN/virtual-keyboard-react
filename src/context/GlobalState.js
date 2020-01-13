@@ -7,6 +7,8 @@ import {
   DELETE_LIST_ITEM,
   SET_CURRENT_LIST_ITEM,
   TOGGLE_LANGUAGE,
+  SHOW_ALERT,
+  CLEAR_ALERT,
 } from './types';
 
 import GlobalContext from './globalContext';
@@ -20,9 +22,19 @@ const GlobalState = (props) => {
     currentListItem: 0,
     capsLock: false,
     shiftKey: false,
+    alert: '',
   };
 
   const [state, dispatch] = useReducer(GlobalReducer, initialState);
+
+  const showAlert = (message) => {
+    dispatch({
+      type: SHOW_ALERT,
+      payload: message,
+    });
+
+    setTimeout(() => dispatch({ type: CLEAR_ALERT }), 5000);
+  };
 
   const setFieldValue = (value) => {
     dispatch({
@@ -32,24 +44,22 @@ const GlobalState = (props) => {
   };
 
   const toggleCapsLock = () => {
-    dispatch({
-      type: TOGGLE_CAPS_LOCK,
-      payload: null,
-    });
+    dispatch({ type: TOGGLE_CAPS_LOCK });
   };
 
   const toggleLanguage = () => {
-    dispatch({
-      type: TOGGLE_LANGUAGE,
-      payload: null,
-    });
+    dispatch({ type: TOGGLE_LANGUAGE });
   };
 
   const addListItem = (item) => {
-    dispatch({
-      type: ADD_LIST_ITEM,
-      payload: item,
-    });
+    if (item.length === 0) showAlert("Value shouldn't be empty");
+    else if (!item.match(/\w+/)) showAlert("Special character aren't allowed");
+    else {
+      dispatch({
+        type: ADD_LIST_ITEM,
+        payload: item,
+      });
+    }
   };
 
   const setCurrentListItem = (index) => {
@@ -74,12 +84,14 @@ const GlobalState = (props) => {
         listItems: state.listItems,
         currentListItem: state.currentListItem,
         capsLock: state.capsLock,
+        alert: state.alert,
         setFieldValue,
         toggleCapsLock,
         toggleLanguage,
         addListItem,
         setCurrentListItem,
         deleteListItem,
+        showAlert,
       }}
     >
       {props.children}

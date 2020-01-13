@@ -2,7 +2,7 @@ $color-primary: #3a424e;
 $color-primary-dark: #1c232e;
 $color-secondary: #bccff8;
 $color-select: #5571ee;
-
+$color-danger: #e22e2e;
 $color-text-primary: white;
 $color-text-primary-dark: #808080;
 
@@ -22,7 +22,6 @@ $color-text-primary-dark: #808080;
 // KEYBOARD
 
 .input-field {
-  margin-top: 4rem;
   width: 68rem;
   height: 4rem;
   border: 0.4rem dotted $color-primary-dark;
@@ -108,7 +107,7 @@ $color-text-primary-dark: #808080;
 
   border-radius: 1rem;
   background-color: $color-secondary;
-  transition: all .1s;
+  transition: all 0.1s;
 
   color: $color-primary;
 
@@ -120,6 +119,16 @@ $color-text-primary-dark: #808080;
   }
 
   &--selected {
-    border: .3rem solid $color-select;
+    border: 0.3rem solid $color-select;
   }
+}
+
+// ALERT
+
+.alert-wrapper {
+  @include flexCenter;
+  height: 4rem;
+  margin: 0 1rem;
+
+  text-shadow: 0 0 2rem $color-danger;
 }

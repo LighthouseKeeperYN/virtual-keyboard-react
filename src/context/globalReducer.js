@@ -5,6 +5,8 @@ import {
   DELETE_LIST_ITEM,
   SET_CURRENT_LIST_ITEM,
   TOGGLE_LANGUAGE,
+  SHOW_ALERT,
+  CLEAR_ALERT,
 } from './types';
 
 export default (state, action) => {
@@ -25,6 +27,10 @@ export default (state, action) => {
         listItems: state.listItems.filter((item, index) => index !== action.payload),
         currentListItem: state.currentListItem > 0 ? state.currentListItem - 1 : 0,
       };
+    case SHOW_ALERT:
+      return { ...state, alert: action.payload };
+    case CLEAR_ALERT:
+      return { ...state, alert: '' };
     default:
       return state;
   }
