@@ -11,10 +11,13 @@
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
+    "surge": "^0.21.3",
+    "normalize.css": "^8.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "deploy": "react-scripts build && surge build virtual-keyboard-react-lhk.surge.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
