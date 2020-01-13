@@ -1,7 +1,7 @@
-const rus = {
+const eng = {
   Backquote: {
-    default: 'ё',
-    alt: 'Ё',
+    default: '`',
+    alt: '~',
   },
   Digit1: {
     default: '1',
@@ -9,27 +9,27 @@ const rus = {
   },
   Digit2: {
     default: '2',
-    alt: '"',
+    alt: '@',
   },
   Digit3: {
     default: '3',
-    alt: '№',
+    alt: '#',
   },
   Digit4: {
     default: '4',
-    alt: ';',
+    alt: '$',
   },
   Digit5: {
     default: '5',
-    alt: ':',
+    alt: '%',
   },
   Digit6: {
     default: '6',
-    alt: ':',
+    alt: '^',
   },
   Digit7: {
     default: '7',
-    alt: '?',
+    alt: '&',
   },
   Digit8: {
     default: '8',
@@ -62,56 +62,56 @@ const rus = {
     isSpecial: true,
   },
   KeyQ: {
-    default: 'й',
-    alt: 'Й',
+    default: 'q',
+    alt: 'Q',
   },
   KeyW: {
-    default: 'ц',
-    alt: 'Ц',
+    default: 'w',
+    alt: 'W',
   },
   KeyE: {
-    default: 'у',
-    alt: 'У',
+    default: 'e',
+    alt: 'E',
   },
   KeyR: {
-    default: 'к',
-    alt: 'К',
+    default: 'r',
+    alt: 'R',
   },
   KeyT: {
-    default: 'е',
-    alt: 'Е',
+    default: 't',
+    alt: 'T',
   },
   KeyY: {
-    default: 'н',
-    alt: 'Н',
+    default: 'y',
+    alt: 'Y',
   },
   KeyU: {
-    default: 'г',
-    alt: 'Г',
+    default: 'u',
+    alt: 'U',
   },
   KeyI: {
-    default: 'ш',
-    alt: 'Ш',
+    default: 'i',
+    alt: 'I',
   },
   KeyO: {
-    default: 'щ',
-    alt: 'Щ',
+    default: 'o',
+    alt: 'O',
   },
   KeyP: {
-    default: 'з',
-    alt: 'З',
+    default: 'p',
+    alt: 'P',
   },
   BracketLeft: {
-    default: 'х',
-    alt: 'Х',
+    default: '[',
+    alt: '{',
   },
   BracketRight: {
-    default: 'ъ',
-    alt: 'Ъ',
+    default: ']',
+    alt: '}',
   },
   Backslash: {
     default: '\\',
-    alt: '/',
+    alt: '|',
   },
   CapsLock: {
     default: 'Caps Lock',
@@ -119,48 +119,48 @@ const rus = {
     isSpecial: true,
   },
   KeyA: {
-    default: 'ф',
-    alt: 'Ф',
+    default: 'a',
+    alt: 'A',
   },
   KeyS: {
-    default: 'ы',
-    alt: 'Ы',
+    default: 's',
+    alt: 'S',
   },
   KeyD: {
-    default: 'в',
-    alt: 'В',
+    default: 'd',
+    alt: 'D',
   },
   KeyF: {
-    default: 'а',
-    alt: 'А',
+    default: 'f',
+    alt: 'F',
   },
   KeyG: {
-    default: 'п',
-    alt: 'П',
+    default: 'g',
+    alt: 'G',
   },
   KeyH: {
-    default: 'р',
-    alt: 'Р',
+    default: 'h',
+    alt: 'H',
   },
   KeyJ: {
-    default: 'о',
-    alt: 'О',
+    default: 'j',
+    alt: 'J',
   },
   KeyK: {
-    default: 'л',
-    alt: 'Л',
+    default: 'k',
+    alt: 'K',
   },
   KeyL: {
-    default: 'д',
-    alt: 'Д',
+    default: 'l',
+    alt: 'L',
   },
   Semicolon: {
-    default: 'ж',
-    alt: 'Ж',
+    default: ';',
+    alt: ':',
   },
   Quote: {
-    default: 'э',
-    alt: 'Э',
+    default: "'",
+    alt: '"',
   },
   Enter: {
     default: 'Enter',
@@ -173,44 +173,44 @@ const rus = {
     isSpecial: true,
   },
   KeyZ: {
-    default: 'я',
-    alt: 'Я',
+    default: 'z',
+    alt: 'Z',
   },
   KeyX: {
-    default: 'ч',
-    alt: 'Ч',
+    default: 'x',
+    alt: 'X',
   },
   KeyC: {
-    default: 'с',
-    alt: 'С',
+    default: 'c',
+    alt: 'C',
   },
   KeyV: {
-    default: 'м',
-    alt: 'М',
+    default: 'v',
+    alt: 'V',
   },
   KeyB: {
-    default: 'и',
-    alt: 'И',
+    default: 'b',
+    alt: 'B',
   },
   KeyN: {
-    default: 'т',
-    alt: 'Т',
+    default: 'n',
+    alt: 'N',
   },
   KeyM: {
-    default: 'ь',
-    alt: 'Ь',
+    default: 'm',
+    alt: 'M',
   },
   Comma: {
-    default: 'б',
-    alt: 'Б',
+    default: ',',
+    alt: '<',
   },
   Period: {
-    default: 'ю',
-    alt: 'Ю',
+    default: '.',
+    alt: '>',
   },
   Slash: {
-    default: '.',
-    alt: ',',
+    default: '/',
+    alt: '?',
   },
   ShiftRight: {
     default: 'Shift',
@@ -243,4 +243,4 @@ const rus = {
   },
 };
 
-export default rus;
+export default eng;

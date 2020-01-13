@@ -29,7 +29,7 @@ $color-text-primary-dark: #808080;
   text-align: center;
 }
 
-.keyboard {
+.keyboard-wrapper {
   display: grid;
   grid-template-columns: repeat(15, 4rem);
   gap: 0.6rem;

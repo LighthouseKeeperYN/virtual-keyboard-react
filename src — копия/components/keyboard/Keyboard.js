@@ -1,7 +1,9 @@
 import React, { Fragment, useContext, useState } from 'react';
+import EventListener from 'react-event-listener';
 
 import GlobalContext from '../../context/globalContext';
 
+import InputField from './InputField';
 import KeyboardKey from './KeyboardKey';
 import eng from './alphabets/eng';
 import rus from './alphabets/rus';
@@ -21,7 +23,7 @@ const Keyboard = () => {
   const languages = { eng, rus };
 
   const handleKeyDown = (e) => {
-    const keyCode = e.nativeEvent.code || e.target.id;
+    const keyCode = e.code || e.target.id;
 
     if (!eng[keyCode]) return;
 
@@ -31,8 +33,7 @@ const Keyboard = () => {
 
     if (isSpecial) {
       switch (keyCode) {
-        case 'Backspace':
-          setFieldValue(fieldValue.slice(0, -1));
+        case 'BackSpace': // deleteCurrentItem()
           break;
         case 'Enter': // createItem()
           break;
@@ -64,22 +65,17 @@ const Keyboard = () => {
 
   return (
     <Fragment>
-      <input
-        className="input-field"
-        type="text"
-        maxLength={20}
-        defaultValue={fieldValue}
-        onKeyUp={handleKeyUp}
-        onKeyDown={handleKeyDown}
-      ></input>
-      <div className="keyboard" onMouseDown={handleKeyDown} onMouseUp={handleKeyUp}>
+      {/* <EventListener target={document} onKeyDown={handleKeyUp} />
+      <EventListener target={document} onKeyUp={handleKeyDown} /> */}
+      <InputField />
+      <div className="keyboard-wrapper" onClick={handleKeyDown}>
         {Object.entries(languages[language]).map(([keycode, action]) => (
           <KeyboardKey
             text={action.default}
             isSpecial={!!action.isSpecial}
             keycode={keycode}
             key={keycode}
-            isDown={!!keyDown[keycode]}
+            isDown={keyDown[keycode]}
           />
         ))}
       </div>
