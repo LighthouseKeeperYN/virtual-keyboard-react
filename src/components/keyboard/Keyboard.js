@@ -18,6 +18,7 @@ const Keyboard = () => {
   } = useContext(GlobalContext);
 
   const [keyDown, setKeyDown] = useState({});
+  const [shiftActive, setShiftActive] = useState(false);
 
   const languages = { eng, rus };
 
