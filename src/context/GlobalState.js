@@ -6,6 +6,7 @@ import {
   SET_LIST_ITEM,
   DELETE_LIST_ITEM,
   SET_CURRENT_LIST_ITEM,
+  TOGGLE_LANGUAGE,
 } from './types';
 
 import GlobalContext from './globalContext';
@@ -14,6 +15,7 @@ import GlobalReducer from './globalReducer';
 const GlobalState = (props) => {
   const initialState = {
     fieldValue: '',
+    language: 'eng',
     currentListItem: null,
     capsLock: false,
     shiftKey: false,
@@ -35,14 +37,23 @@ const GlobalState = (props) => {
     });
   };
 
+  const toggleLanguage = () => {
+    dispatch({
+      type: TOGGLE_LANGUAGE,
+      payload: null,
+    });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
         fieldValue: state.fieldValue,
+        language: state.language,
         currentListItem: state.currentListItem,
         capsLock: state.capsLock,
         setFieldValue,
         toggleCapsLock,
+        toggleLanguage,
       }}
     >
       {props.children}
