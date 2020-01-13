@@ -57,12 +57,12 @@ const Keyboard = () => {
       if (fieldValue.length < 20) setFieldValue(`${fieldValue}${action}`);
     }
 
-    setKeyDown({ ...keyDown, [keyCode]: false });
+    setKeyDown({ ...keyDown, [keyCode]: true });
   };
 
   const handleKeyUp = (e) => {
     e.preventDefault();
-    setKeyDown({ ...keyDown, [e.code || e.target.id]: true });
+    setKeyDown({ ...keyDown, [e.nativeEvent.code || e.target.id]: false });
   };
 
   return (

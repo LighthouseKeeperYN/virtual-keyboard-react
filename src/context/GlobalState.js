@@ -52,8 +52,8 @@ const GlobalState = (props) => {
   };
 
   const addListItem = (item) => {
-    if (item.length === 0) showAlert("Value shouldn't be empty");
-    else if (!item.match(/^[\p{Letter}\d]+$/u)) {
+    if (item.replace(/ /g, '').length === 0) showAlert("Value shouldn't be empty");
+    else if (!item.match(/^[\p{Letter}\d\s]+$/u)) {
       showAlert("Special character aren't allowed");
     } else {
       dispatch({
