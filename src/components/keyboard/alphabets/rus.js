@@ -51,8 +51,15 @@ const rus = {
     default: '=',
     alt: '+',
   },
-  Backspace: null,
-  Tab: null,
+  Backspace: {
+    default: 'Backspace',
+    alt: 'Backspace',
+    isSpecial: true,
+  },
+  Tab: {
+    default: 'Tab',
+    alt: 'Tab',
+  },
   KeyQ: {
     default: 'й',
     alt: 'Й',
@@ -105,7 +112,11 @@ const rus = {
     default: '\\',
     alt: '/',
   },
-  CapsLock: null,
+  CapsLock: {
+    default: 'Caps Lock',
+    alt: 'Caps Lock',
+    isSpecial: true,
+  },
   KeyA: {
     default: 'ф',
     alt: 'Ф',
@@ -150,8 +161,16 @@ const rus = {
     default: 'э',
     alt: 'Э',
   },
-  Enter: null,
-  ShiftLeft: null,
+  Enter: {
+    default: 'Enter',
+    alt: 'Enter',
+    isSpecial: true,
+  },
+  ShiftLeft: {
+    default: 'Shift',
+    alt: 'Shift',
+    isSpecial: true,
+  },
   KeyZ: {
     default: 'я',
     alt: 'Я',
@@ -192,15 +211,35 @@ const rus = {
     default: '.',
     alt: ',',
   },
-  ShiftRight: null,
-  ControlLeft: null,
-  AltLeft: null,
+  ShiftRight: {
+    default: 'Shift',
+    alt: 'Shift',
+    isSpecial: true,
+  },
+  ControlLeft: {
+    default: 'Ctrl',
+    alt: 'Ctrl',
+    isSpecial: true,
+  },
+  AltLeft: {
+    default: 'Alt',
+    alt: 'Alt',
+    isSpecial: true,
+  },
   Space: {
     default: ' ',
     alt: ' ',
   },
-  AltRight: null,
-  ControlRight: null,
+  AltRight: {
+    default: 'Alt',
+    alt: 'Alt',
+    isSpecial: true,
+  },
+  ControlRight: {
+    default: 'Ctrl',
+    alt: 'Ctrl',
+    isSpecial: true,
+  },
 };
 
 export default rus;

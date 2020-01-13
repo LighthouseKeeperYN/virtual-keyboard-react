@@ -51,8 +51,16 @@ const eng = {
     default: '=',
     alt: '+',
   },
-  Backspace: null,
-  Tab: null,
+  Backspace: {
+    default: 'Backspace',
+    alt: 'Backspace',
+    isSpecial: true,
+  },
+  Tab: {
+    default: 'Tab',
+    alt: 'Tab',
+    isSpecial: true,
+  },
   KeyQ: {
     default: 'q',
     alt: 'Q',
@@ -105,7 +113,11 @@ const eng = {
     default: '\\',
     alt: '|',
   },
-  CapsLock: null,
+  CapsLock: {
+    default: 'Caps Lock',
+    alt: 'Caps Lock',
+    isSpecial: true,
+  },
   KeyA: {
     default: 'a',
     alt: 'A',
@@ -150,8 +162,16 @@ const eng = {
     default: "'",
     alt: '"',
   },
-  Enter: null,
-  ShiftLeft: null,
+  Enter: {
+    default: 'Enter',
+    alt: 'Enter',
+    isSpecial: true,
+  },
+  ShiftLeft: {
+    default: 'Shift',
+    alt: 'Shift',
+    isSpecial: true,
+  },
   KeyZ: {
     default: 'z',
     alt: 'Z',
@@ -192,15 +212,35 @@ const eng = {
     default: '/',
     alt: '?',
   },
-  ShiftRight: null,
-  ControlLeft: null,
-  AltLeft: null,
+  ShiftRight: {
+    default: 'Shift',
+    alt: 'Shift',
+    isSpecial: true,
+  },
+  ControlLeft: {
+    default: 'Ctrl',
+    alt: 'Ctrl',
+    isSpecial: true,
+  },
+  AltLeft: {
+    default: 'Alt',
+    alt: 'Alt',
+    isSpecial: true,
+  },
   Space: {
     default: ' ',
     alt: ' ',
   },
-  AltRight: null,
-  ControlRight: null
+  AltRight: {
+    default: 'Alt',
+    alt: 'Alt',
+    isSpecial: true,
+  },
+  ControlRight: {
+    default: 'Ctrl',
+    alt: 'Ctrl',
+    isSpecial: true,
+  },
 };
 
 export default eng;

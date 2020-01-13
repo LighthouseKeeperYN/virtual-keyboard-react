@@ -1,3 +1,10 @@
+$color-primary: #3a424e;
+$color-primary-dark: #1c232e;
+$color-select: #5571ee;
+
+$color-text-primary: white;
+$color-text-primary-dark: #808080;
+
 .main-wrapper {
   display: flex;
   flex-direction: column;
@@ -8,7 +15,58 @@
 }
 
 .keyboard-wrapper {
-  width: 80rem;
-  height: 40rem;
-  background-color: rgb(150, 209, 233);
+  display: grid;
+  grid-template-columns: repeat(15, 4rem);
+  gap: 0.6rem;
+
+  padding: 0.6rem;
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 4rem;
+  border-radius: 0.4rem;
+  background-color: $color-primary;
+  transform: all, 0.2s;
+
+  font-size: 1.7rem;
+  color: white;
+  text-transform: inherit;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-select;
+  }
+
+  &--special {
+    background-color: $color-primary-dark;
+    color: $color-text-primary-dark;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &--Backspace,
+  &--Tab,
+  &--CapsLock,
+  &--Enter,
+  &--ShiftLeft,
+  &--ControlLeft,
+  &--ControlRight,
+  &--AltLeft,
+  &--AltRight {
+    grid-column: span 2;
+  }
+
+  &--ShiftRight {
+    grid-column: span 3;
+  }
+
+  &--Space {
+    grid-column: span 7;
+  }
 }
