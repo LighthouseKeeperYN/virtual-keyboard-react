@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import GlobalContext from '../../context/globalContext';
 
+import DeleteItemButton from './DeleteItemButton';
+
 const ToDoItem = ({ text, index }) => {
   const { currentListItem, setCurrentListItem } = useContext(GlobalContext);
 
@@ -13,7 +15,8 @@ const ToDoItem = ({ text, index }) => {
       }`}
       onClick={() => setCurrentListItem(index)}
     >
-      {text}
+      <span>{text}</span>
+      <DeleteItemButton index={index}/>
     </li>
   );
 };

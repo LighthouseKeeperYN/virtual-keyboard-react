@@ -103,6 +103,8 @@ $color-text-primary-dark: #808080;
 }
 
 .to-do-list-item {
+  position: relative;
+
   @include flexCenter;
 
   border-radius: 1rem;
@@ -120,6 +122,43 @@ $color-text-primary-dark: #808080;
 
   &--selected {
     border: 0.3rem solid $color-select;
+  }
+}
+
+.delete-item-button {
+  position: absolute;
+  right: 1rem;
+
+  margin-left: 1rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: #00000000;
+
+  &:hover {
+    &::before,
+    &::after {
+      background-color: $color-text-primary;
+    }
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 45%;
+    top: 0;
+
+    content: ' ';
+    height: 100%;
+    width: 0.2rem;
+    background-color: $color-danger;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
   }
 }
 
