@@ -17,6 +17,8 @@ export default (state, action) => {
       return { ...state, language: state.language === 'eng' ? 'rus' : 'eng' };
     case ADD_LIST_ITEM:
       return { ...state, listItems: [...state.listItems, action.payload] };
+    case SET_CURRENT_LIST_ITEM:
+      return { ...state, currentListItem: action.payload };
     default:
       return state;
   }

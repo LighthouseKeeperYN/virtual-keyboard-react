@@ -52,6 +52,13 @@ const GlobalState = (props) => {
     });
   };
 
+  const setCurrentListItem = (index) => {
+    dispatch({
+      type: SET_CURRENT_LIST_ITEM,
+      payload: index,
+    });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -64,6 +71,7 @@ const GlobalState = (props) => {
         toggleCapsLock,
         toggleLanguage,
         addListItem,
+        setCurrentListItem,
       }}
     >
       {props.children}

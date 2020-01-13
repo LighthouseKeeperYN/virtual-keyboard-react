@@ -108,6 +108,7 @@ $color-text-primary-dark: #808080;
 
   border-radius: 1rem;
   background-color: $color-secondary;
+  transition: all .1s;
 
   color: $color-primary;
 
@@ -116,5 +117,9 @@ $color-text-primary-dark: #808080;
     background-color: $color-select;
 
     color: $color-text-primary;
+  }
+
+  &--selected {
+    border: .3rem solid $color-select;
   }
 }
