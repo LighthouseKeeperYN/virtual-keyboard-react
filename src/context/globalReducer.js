@@ -1,7 +1,7 @@
 import {
   SET_FIELD_VALUE,
   TOGGLE_CAPS_LOCK,
-  SET_LIST_ITEM,
+  ADD_LIST_ITEM,
   DELETE_LIST_ITEM,
   SET_CURRENT_LIST_ITEM,
   TOGGLE_LANGUAGE,
@@ -15,6 +15,8 @@ export default (state, action) => {
       return { ...state, capsLock: !state.capsLock };
     case TOGGLE_LANGUAGE:
       return { ...state, language: state.language === 'eng' ? 'rus' : 'eng' };
+    case ADD_LIST_ITEM:
+      return { ...state, listItems: [...state.listItems, action.payload] };
     default:
       return state;
   }

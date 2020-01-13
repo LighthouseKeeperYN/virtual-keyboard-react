@@ -14,6 +14,7 @@ const Keyboard = () => {
     toggleCapsLock,
     language,
     toggleLanguage,
+    addListItem,
   } = useContext(GlobalContext);
 
   const [keyDown, setKeyDown] = useState({});
@@ -34,7 +35,9 @@ const Keyboard = () => {
         case 'Backspace':
           setFieldValue(fieldValue.slice(0, -1));
           break;
-        case 'Enter': // createItem()
+        case 'Enter':
+          addListItem(fieldValue);
+          setFieldValue('');
           break;
         case 'CapsLock':
           toggleCapsLock();

@@ -3,7 +3,7 @@ import React, { useReducer } from 'react';
 import {
   SET_FIELD_VALUE,
   TOGGLE_CAPS_LOCK,
-  SET_LIST_ITEM,
+  ADD_LIST_ITEM,
   DELETE_LIST_ITEM,
   SET_CURRENT_LIST_ITEM,
   TOGGLE_LANGUAGE,
@@ -16,6 +16,7 @@ const GlobalState = (props) => {
   const initialState = {
     fieldValue: '',
     language: 'eng',
+    listItems: [],
     currentListItem: null,
     capsLock: false,
     shiftKey: false,
@@ -44,16 +45,25 @@ const GlobalState = (props) => {
     });
   };
 
+  const addListItem = (item) => {
+    dispatch({
+      type: ADD_LIST_ITEM,
+      payload: item,
+    });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
         fieldValue: state.fieldValue,
         language: state.language,
+        listItems: state.listItems,
         currentListItem: state.currentListItem,
         capsLock: state.capsLock,
         setFieldValue,
         toggleCapsLock,
         toggleLanguage,
+        addListItem,
       }}
     >
       {props.children}
