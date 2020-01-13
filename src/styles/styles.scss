@@ -1,0 +1,14 @@
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+}
+
+.keyboard-wrapper {
+  width: 80rem;
+  height: 40rem;
+  background-color: rgb(150, 209, 233);
+}

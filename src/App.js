@@ -1,14 +1,17 @@
 import React from 'react';
 
 import 'normalize.css';
-import './App.scss';
+import './styles/base.scss';
+import './styles/styles.scss';
+
+import Keyboard from './components/keyboard/Keyboard';
 
 const App = () => {
   return (
-    <div>
+    <main className="main-wrapper">
+      <Keyboard />
+    </main>
+  );
+};
 
-    </div>
-  )
-}
-
-export default App
+export default App;
