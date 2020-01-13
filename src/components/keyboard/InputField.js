@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function InputField() {
+function InputField({ fieldValue }) {
   return (
-    <input className="input-field"  type="text" maxLength={20}>
-
-    </input>
-  )
+    <input className="input-field" type="text" maxLength={20} defaultValue={fieldValue}></input>
+  );
 }
 
-export default InputField
+InputField.propTypes = {
+  fieldValue: PropTypes.string,
+};
+
+export default InputField;

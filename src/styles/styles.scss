@@ -94,8 +94,9 @@ $color-text-primary-dark: #808080;
   height: 40rem;
   width: 70rem;
   padding: 1rem;
-  border: 0.5rem solid $color-primary-dark;
+  border: 0.5rem solid $color-primary;
   border-radius: 1rem;
+  overflow-y: scroll;
 }
 
 .to-do-list-item {

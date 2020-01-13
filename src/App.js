@@ -4,15 +4,19 @@ import 'normalize.css';
 import './styles/base.scss';
 import './styles/styles.scss';
 
+import ToolPanelState from './context/GlobalState';
+
 import Keyboard from './components/keyboard/Keyboard';
 import ToDoList from './components/toDoList/ToDoList';
 
 const App = () => {
   return (
-    <main className="main-wrapper">
-      <ToDoList />
-      <Keyboard />
-    </main>
+    <ToolPanelState>
+      <main className="main-wrapper">
+        <ToDoList />
+        <Keyboard />
+      </main>
+    </ToolPanelState>
   );
 };
 

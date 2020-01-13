@@ -8,7 +8,7 @@ import InputField from './InputField';
 const Keyboard = () => {
   return (
     <Fragment>
-      <InputField />
+      <InputField fieldValue={'fgsfds'} />
       <div className="keyboard-wrapper">
         {Object.entries(eng).map(([keycode, action]) => (
           <Key
