@@ -19,6 +19,12 @@ export default (state, action) => {
       return { ...state, listItems: [...state.listItems, action.payload] };
     case SET_CURRENT_LIST_ITEM:
       return { ...state, currentListItem: action.payload };
+    case DELETE_LIST_ITEM:
+      return {
+        ...state,
+        listItems: state.listItems.filter((item, index) => index !== action.payload),
+        currentListItem: state.currentListItem > 0 ? state.currentListItem - 1 : 0,
+      };
     default:
       return state;
   }

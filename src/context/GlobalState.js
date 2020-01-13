@@ -17,7 +17,7 @@ const GlobalState = (props) => {
     fieldValue: '',
     language: 'eng',
     listItems: [],
-    currentListItem: null,
+    currentListItem: 0,
     capsLock: false,
     shiftKey: false,
   };
@@ -59,6 +59,13 @@ const GlobalState = (props) => {
     });
   };
 
+  const deleteListItem = (index) => {
+    dispatch({
+      type: DELETE_LIST_ITEM,
+      payload: index,
+    });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -72,6 +79,7 @@ const GlobalState = (props) => {
         toggleLanguage,
         addListItem,
         setCurrentListItem,
+        deleteListItem,
       }}
     >
       {props.children}
