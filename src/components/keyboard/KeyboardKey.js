@@ -1,24 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Key = ({ text, keycode, isSpecial, isDown }) => {
+import { applyKeyModifiers } from '../../shared/utilities';
+
+const Key = ({ keyCode, action, isDown, shiftActive, capsLockActive }) => {
+  const { default: def, alt, isSpecial } = action;
+
   return (
     <div
-      className={`key key--${keycode} ${isSpecial ? 'key--special' : ''} ${
+      className={`key key--${keyCode} ${isSpecial ? 'key--special' : ''} ${
         isDown ? 'key--down' : ''
       }`}
-      id={keycode}
+      id={keyCode}
     >
-      {text}
+      {isSpecial ? def : applyKeyModifiers(def, alt, shiftActive, capsLockActive)}
     </div>
   );
 };
 
 Key.propTypes = {
-  text: PropTypes.string.isRequired,
-  keycode: PropTypes.string.isRequired,
-  isSpecial: PropTypes.bool.isRequired,
+  keyCode: PropTypes.string.isRequired,
+  action: PropTypes.object.isRequired,
   isDown: PropTypes.bool.isRequired,
+  shiftActive: PropTypes.bool.isRequired,
+  capsLockActive: PropTypes.bool.isRequired,
 };
 
 export default Key;

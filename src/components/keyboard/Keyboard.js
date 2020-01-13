@@ -2,6 +2,8 @@ import React, { Fragment, useContext, useState } from 'react';
 
 import GlobalContext from '../../context/globalContext';
 
+import { applyKeyModifiers } from '../../shared/utilities';
+
 import KeyboardKey from './KeyboardKey';
 import eng from './alphabets/eng';
 import rus from './alphabets/rus';
@@ -44,7 +46,11 @@ const Keyboard = () => {
           toggleCapsLock();
           break;
         case 'ShiftLeft':
+          setShiftActive(true);
           if (e.altKey) toggleLanguage();
+          break;
+        case 'ShiftRight':
+          setShiftActive(true);
           break;
         case 'AltLeft':
           if (e.shiftKey) toggleLanguage();
@@ -53,9 +59,8 @@ const Keyboard = () => {
           break;
       }
     } else {
-      let action = e.shiftKey ? alt : def;
-      if (capsLock) action = e.shiftKey ? action.toLowerCase() : action.toUpperCase();
-      if (fieldValue.length < 20) setFieldValue(`${fieldValue}${action}`);
+      const modifiedKey = applyKeyModifiers(def, alt, shiftActive, capsLock);
+      if (fieldValue.length < 20) setFieldValue(`${fieldValue}${modifiedKey}`);
     }
 
     setKeyDown({ ...keyDown, [keyCode]: true });
@@ -64,6 +69,7 @@ const Keyboard = () => {
   const handleKeyUp = (e) => {
     e.preventDefault();
     setKeyDown({ ...keyDown, [e.nativeEvent.code || e.target.id]: false });
+    if (e.key === 'Shift') setShiftActive(false);
   };
 
   return (
@@ -77,13 +83,14 @@ const Keyboard = () => {
         onKeyDown={handleKeyDown}
       ></input>
       <div className="keyboard" onMouseDown={handleKeyDown} onMouseUp={handleKeyUp}>
-        {Object.entries(languages[language]).map(([keycode, action]) => (
+        {Object.entries(languages[language]).map(([keyCode, action]) => (
           <KeyboardKey
-            text={action.default}
-            isSpecial={!!action.isSpecial}
-            keycode={keycode}
-            key={keycode}
-            isDown={!!keyDown[keycode]}
+            key={keyCode}
+            keyCode={keyCode}
+            action={action}
+            isDown={!!keyDown[keyCode]}
+            shiftActive={shiftActive}
+            capsLockActive={capsLock}
           />
         ))}
       </div>
