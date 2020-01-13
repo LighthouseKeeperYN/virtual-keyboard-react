@@ -9,7 +9,14 @@ import InputField from './InputField';
 // import rus from './alphabets/rus';
 
 const Keyboard = () => {
-  const { fieldValue, setFieldValue } = useContext(GlobalContext);
+  const {
+    fieldValue,
+    setFieldValue,
+    capsLock,
+    toggleCapsLock,
+    language,
+    toggleLanguage,
+  } = useContext(GlobalContext);
 
   const handleKeyPress = (e) => {
     const key = e.code || e.target.id;
@@ -18,7 +25,23 @@ const Keyboard = () => {
 
     const { default: def, alt, isSpecial } = eng[key];
 
-    if (!isSpecial && fieldValue.length < 20) setFieldValue(`${fieldValue}${def}`);
+    if (isSpecial) {
+      switch (key) {
+        case 'BackSpace': // deleteCurrentItem()
+          break;
+        case 'Enter': // createItem()
+          break;
+        case 'CapsLock':
+          toggleCapsLock();
+          break;
+        default:
+          break;
+      }
+    } else {
+      let action = e.shiftKey ? alt : def;
+      if (capsLock) action = e.shiftKey ? action.toLowerCase() : action.toUpperCase();
+      if (fieldValue.length < 20) setFieldValue(`${fieldValue}${action}`);
+    }
   };
 
   return (
