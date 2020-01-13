@@ -63,6 +63,10 @@ $color-text-primary-dark: #808080;
     }
   }
 
+  &--down {
+    transform: translate(0.2rem, 0.2rem);
+  }
+
   &--Backspace,
   &--Tab,
   &--CapsLock,
