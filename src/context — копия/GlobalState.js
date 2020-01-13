@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 
-import { SET_FIELD_VALUE, SET_LIST_ITEM, DELETE_LIST_ITEM, SET_CURRENT_LIST_ITEM } from './types';
+import { ADD_TO_FIELD_VALUE, SET_LIST_ITEM, DELETE_LIST_ITEM, SET_CURRENT_LIST_ITEM } from './types';
 
 import GlobalContext from './globalContext';
 import GlobalReducer from './globalReducer';
@@ -13,9 +13,9 @@ const GlobalState = (props) => {
 
   const [state, dispatch] = useReducer(GlobalReducer, initialState);
 
-  const setFieldValue = (value) => {
+  const addToFieldValue = (value) => {
     dispatch({
-      type: SET_FIELD_VALUE,
+      type: ADD_TO_FIELD_VALUE,
       payload: value,
     });
   };
@@ -25,7 +25,7 @@ const GlobalState = (props) => {
       value={{
         fieldValue: state.fieldValue,
         currentListItem: state.currentListItem,
-        setFieldValue,
+        addToFieldValue,
       }}
     >
       {props.children}

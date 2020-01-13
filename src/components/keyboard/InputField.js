@@ -1,14 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 
-function InputField({ fieldValue }) {
+import GlobalContext from '../../context/globalContext';
+
+function InputField() {
+  const { fieldValue } = useContext(GlobalContext);
+
   return (
     <input className="input-field" type="text" maxLength={20} defaultValue={fieldValue}></input>
   );
 }
-
-InputField.propTypes = {
-  fieldValue: PropTypes.string,
-};
 
 export default InputField;

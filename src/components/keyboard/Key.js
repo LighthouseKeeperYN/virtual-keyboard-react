@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Key = ({ text, keycode, isSpecial }) => {
   return (
-    <div className={`key key--${keycode} ${isSpecial ? 'key--special' : ''}`}>
-      <span>{text}</span>
+    <div className={`key key--${keycode} ${isSpecial ? 'key--special' : ''}`} id={keycode}>
+      {text}
     </div>
   );
 };
