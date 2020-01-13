@@ -6,16 +6,28 @@ $color-select: #5571ee;
 $color-text-primary: white;
 $color-text-primary-dark: #808080;
 
-.main-wrapper {
+@mixin flexCenter {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.main-wrapper {
+  @include flexCenter;
+  flex-direction: column;
 
   min-height: 100vh;
 }
 
 // KEYBOARD
+
+.input-field {
+  margin-top: 4rem;
+  width: 68rem;
+  height: 4rem;
+  border: 0.4rem dotted $color-primary-dark;
+  text-align: center;
+}
 
 .keyboard-wrapper {
   display: grid;
@@ -26,9 +38,7 @@ $color-text-primary-dark: #808080;
 }
 
 .key {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter;
 
   height: 4rem;
   border-radius: 0.4rem;
@@ -84,15 +94,12 @@ $color-text-primary-dark: #808080;
   height: 40rem;
   width: 70rem;
   padding: 1rem;
-  // background-color: $color-secondary;
   border: 0.5rem solid $color-primary-dark;
   border-radius: 1rem;
 }
 
 .to-do-list-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCenter;
 
   border-radius: 1rem;
   background-color: $color-secondary;
