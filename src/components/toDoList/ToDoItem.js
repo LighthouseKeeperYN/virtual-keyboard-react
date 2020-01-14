@@ -16,7 +16,7 @@ const ToDoItem = ({ text, index }) => {
       onClick={() => setCurrentListItem(index)}
     >
       <span>{text}</span>
-      <DeleteItemButton index={index}/>
+      <DeleteItemButton index={index} />
     </li>
   );
 };
